@@ -1,57 +1,35 @@
-# Fireflies.ai Clone - Meeting Notes & Transcription Platform
+# Fireflies.ai Clone
 
-A full-stack meeting assistant and transcription web application that replicates the core design, user experience, and post-meeting workflows of Fireflies.ai[cite: 2, 3].
+A full-stack meeting transcription and AI note-taking platform mimicking the core functionalities of Fireflies.ai. Built for the Scaler AI assignment, this application features interactive transcripts, audio synchronization, and AI-generated summaries.
 
-## Tech Stack
+## 🚀 Live Deployments
 
-* **Frontend:** Next.js (TypeScript, Tailwind CSS, Lucide Icons)
-* **Backend:** Python with FastAPI, SQLAlchemy[cite: 3]
-* **Database:** SQLite (Relational Schema)[cite: 3]
+- **Frontend Application (Vercel):** [https://fireflies-clone-g0u24ntvk-arpnd785s-projects.vercel.app/](https://fireflies-clone-g0u24ntvk-arpnd785s-projects.vercel.app/)
+- **Backend API (Render):** [https://fireflies-backend-dsa3.onrender.com](https://fireflies-backend-dsa3.onrender.com)
 
----
+## ✨ Features
 
-## Architecture Overview
+- **Interactive Dashboard:** Browse and search through a library of meeting recordings.
+- **Audio-Transcript Synchronization:** Click on any transcript segment to jump to that exact moment in the audio playback.
+- **AI Meeting Summaries:** View automated summaries, bulleted action items, and key takeaways for each meeting.
+- **Responsive UI:** Clean, modern interface built with Next.js and Tailwind CSS.
 
-The application follows a decoupled client-server architecture:
-* **Backend (`/backend`)**: Built with FastAPI, providing RESTful endpoints for meeting management, action items tracking, and transcript segmentation. Data is persisted using SQLAlchemy ORM with SQLite[cite: 3].
-* **Frontend (`/frontend`)**: Built with Next.js App Router and TypeScript, utilizing Tailwind CSS to achieve high visual similarity to Fireflies' modern dark-themed workspace[cite: 3, 4]. Features bidirectional synchronization between the interactive transcript and HTML5 audio player[cite: 3].
+## 💻 Tech Stack
 
----
+**Frontend:**
+- Next.js 13+ (App Router)
+- React & TypeScript
+- Tailwind CSS
 
-## Database Schema
+**Backend:**
+- Python (v3.11)
+- FastAPI
+- SQLAlchemy & SQLite (Database)
+- Uvicorn
 
-The database consists of three core relational tables:
+## 🛠️ Local Installation
 
-1. **`meetings` Table**
-   * `id` (Integer, Primary Key)
-   * `title` (String, Required)
-   * `date` (DateTime)
-   * `duration_seconds` (Integer)
-   * `participants` (String)
-   * `audio_url` (String, Optional)
-   * `summary` (Text, AI-generated overview)
-   * `topics` (Text, Key tags)
-
-2. **`transcript_segments` Table** (Many-to-One with `meetings`)
-   * `id` (Integer, Primary Key)
-   * `meeting_id` (Foreign Key -> `meetings.id`)
-   * `speaker` (String)
-   * `start_time` (Float, timestamp in seconds)
-   * `end_time` (Float, timestamp in seconds)
-   * `text` (Text)
-
-3. **`action_items` Table** (Many-to-One with `meetings`)
-   * `id` (Integer, Primary Key)
-   * `meeting_id` (Foreign Key -> `meetings.id`)
-   * `text` (String)
-   * `assignee` (String, Optional)
-   * `completed` (Boolean)
-
----
-
-## Setup & Local Installation Instructions
-
-### 1. Clone the Repository
+**1. Clone the repository:**
 ```bash
-git clone [https://github.com/](https://github.com/)<Artnd342>/fireflies-clone.git
+git clone [https://github.com/Artnd342/fireflies-clone.git](https://github.com/Artnd342/fireflies-clone.git)
 cd fireflies-clone
