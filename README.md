@@ -53,5 +53,5 @@ The database consists of three core relational tables:
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/](https://github.com/)<YOUR_GITHUB_USERNAME>/fireflies-clone.git
+git clone [https://github.com/](https://github.com/)<Artnd342>/fireflies-clone.git
 cd fireflies-clone
